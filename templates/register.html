@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Dining Directory</title>
+    <script>
+        function addMealField() {
+            const mealContainer = document.getElementById('meal-container');
+            const mealDiv = document.createElement('div');
+            mealDiv.style.marginBottom = '10px';
+
+            const mealInput = document.createElement('input');
+            mealInput.type = 'text';
+            mealInput.name = 'meal_item';
+            mealInput.placeholder = 'Meal Item';
+            mealInput.required = true;
+            mealInput.style = 'width: 45%; padding: 10px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;';
+
+            const priceInput = document.createElement('input');
+            priceInput.type = 'text';
+            priceInput.name = 'meal_price';
+            priceInput.placeholder = 'Meal Price';
+            priceInput.required = true;
+            priceInput.style = 'width: 45%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;';
+
+            mealDiv.appendChild(mealInput);
+            mealDiv.appendChild(priceInput);
+            mealContainer.appendChild(mealDiv);
+        }
+    </script>
+</head>
+<body style=" margin: 0; font-family: Arial, sans-serif; background: url('registerOrderPageBackgroundImg.jpg') no-repeat center center fixed; background-size: cover;background-color: #f7f2df">
+    <nav style="height: 80px; background-color: red; padding: 15px; display: flex; justify-content: space-between; align-items: center;margin-bottom: 50px; padding-bottom: 10px">
+        <a href="/" style="color: white; text-decoration: none; font-size: 3rem; font-weight: bold;">Dining Directory</a>
+        <div>
+            <a href="/order" style="color: white; text-decoration: none; font-size: 2rem; margin-right: 20px;">Order</a>
+            <a href="/register" style="color: white; text-decoration: none; font-size: 2rem;">Register</a>
+        </div>
+    </nav>
+    <center >
+        <div style="display: flex; justify-content: center; align-items: center; height: 90vh;width: 700px">
+        <form method="POST" style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);">
+            <h2 style="text-align: center; margin-bottom: 20px;">Restaurant Registration</h2>
+            <input type="text" name="name" placeholder="Restaurant Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <input type="text" name="number" placeholder="Contact Number" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+
+            <div id="meal-container">
+                <div style="margin-bottom: 10px;">
+                    <input type="text" name="meal_item" placeholder="Meal Item" required style="width: 45%; padding: 10px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <input type="text" name="meal_price" placeholder="Meal Price" required style="width: 45%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                </div>
+            </div>
+            <button type="button" onclick="addMealField()" style="width: 100%; padding: 10px; margin-bottom: 10px; background-color: green; color: white; border: none; border-radius: 5px; font-size: 1.2rem;">Add Meal</button>
+
+            <input type="password" name="password" placeholder="Password" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <button type="submit" style="width: 100%; padding: 10px; background-color: red; color: white; border: none; border-radius: 5px; font-size: 1.2rem;">Register</button>
+        </form>
+    </div>
+    </center>
+</body>
+</html>

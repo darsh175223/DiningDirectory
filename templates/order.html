@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Dining Directory</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background: url('registerOrderPageBackgroundImg.jpg') no-repeat center center fixed; background-size: cover;background-color: #f7f2df">
+    <nav style="height: 80px; background-color: red; padding: 15px; display: flex; justify-content: space-between; align-items: center;margin-bottom: 50px;">
+        <a href="/" style="color: white; text-decoration: none; font-size: 3rem; font-weight: bold;">Dining Directory</a>
+        <div>
+            <a href="/order" style="color: white; text-decoration: none; font-size: 2rem; margin-right: 20px;">Order</a>
+            <a href="/register" style="color: white; text-decoration: none; font-size: 2rem;">Register</a>
+        </div>
+    </nav>
+    <center >
+        <div style="width: 700px;">
+            <h2 style="color:  #f7f2df; margin-bottom: 30px;">Place Your Order</h2>
+        <form method="POST" style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);">
+            <h2 style="text-align: center; margin-bottom: 20px;">Place Your Order</h2>
+            <select name="restaurant" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                {% for restaurant in restaurants %}
+                    <option value="{{ restaurant.name }}">{{ restaurant.name }}</option>
+                {% endfor %}
+            </select>
+            {% for restaurant in restaurants %}
+                <div>
+                    <h3 style="margin-bottom: 10px;">{{ restaurant.name }}</h3>
+                    {% for meal in restaurant.meals %}
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="margin-right: 10px;">{{ meal.item }}</label>
+                            <input type="checkbox" name="meal_ordered" value="{{ meal.item }}" style="margin-right: 10px;">
+                            <span>${{ meal.price }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit" style="margin-top: 20px; width: 100%; padding: 10px; background-color: red; color: white; border: none; border-radius: 5px; font-size: 1.2rem;">Order Now</button>
+        </form>
+
+        </div>
+
+
+
+    </center>
+</body>
+</html>

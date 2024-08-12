@@ -1,0 +1,40 @@
+[
+    {
+        "name": "PizzaShop",
+        "number": "1231231234",
+        "password": "pizza",
+        "meals": [
+            {
+                "item": "cheese pizza",
+                "price": "1"
+            },
+            {
+                "item": "veggie pizza",
+                "price": "2"
+            },
+            {
+                "item": "pinapple pizza",
+                "price": "3"
+            }
+        ]
+    },
+    {
+        "name": "Bakery",
+        "number": "1231231235",
+        "password": "bakery",
+        "meals": [
+            {
+                "item": "bread",
+                "price": "1"
+            },
+            {
+                "item": "cake",
+                "price": "2"
+            },
+            {
+                "item": "bagel",
+                "price": "3"
+            }
+        ]
+    }
+]
